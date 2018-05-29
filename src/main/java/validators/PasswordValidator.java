@@ -17,8 +17,8 @@ public class PasswordValidator implements ConstraintValidator<Password, String> 
     public boolean isValid(String password,
                            ConstraintValidatorContext cxt) {
         return password != null
-                && (password.length() > 8)
-                && (password.length() < 33)
+                && (password.length() >= 8)
+                && (password.length() <= 32)
                 && !password.equals(password.toLowerCase()) // contains at least one capital letter
                 && password.matches(".*\\d+.*") // contains at least one digit
                 && StringUtils.containsAny(password, PasswordCharactersData.Special.getCharacters()); // contains at least one special character

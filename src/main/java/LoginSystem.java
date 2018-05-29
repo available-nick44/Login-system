@@ -69,7 +69,7 @@ public class LoginSystem {
     private Optional<User> getUser() throws IOException {
         System.out.print("Login (min. 3 signs): ");
         String login = br.readLine();
-        System.out.print("Password (min. 3 signs, 1 special sign, 1 capital letter, 1 digit, random password if empty): ");
+        System.out.print("Password (8 to 32 signs, 1 special sign, 1 capital letter, 1 digit, random password if empty): ");
         String password = br.readLine();
         if (password.equals("")) {
             password = randomPasswordGenerator.generateRandomPassword();
